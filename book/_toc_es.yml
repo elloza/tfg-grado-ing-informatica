@@ -18,8 +18,23 @@ parts:
       - file: es/02_documentacion/estructura_actual
       - file: es/02_documentacion/estructura_antigua
       - file: es/02_documentacion/correspondencias
-      - file: es/02_documentacion/memoria
-      - file: es/02_documentacion/anexos
+    - file: es/02_documentacion/memoria
+      sections:
+      - file: es/02_documentacion/memoria/introduccion
+      - file: es/02_documentacion/memoria/objeto_objetivos
+      - file: es/02_documentacion/memoria/antecedentes
+      - file: es/02_documentacion/memoria/metodos_herramientas
+      - file: es/02_documentacion/memoria/requisitos_alcance
+      - file: es/02_documentacion/memoria/solucion_propuesta
+      - file: es/02_documentacion/memoria/riesgos_gestion
+      - file: es/02_documentacion/memoria/conclusiones
+    - file: es/02_documentacion/anexos
+      sections:
+      - file: es/02_documentacion/anexos/a1_especificaciones
+      - file: es/02_documentacion/anexos/a2_analisis_diseno
+      - file: es/02_documentacion/anexos/a3_estimacion
+      - file: es/02_documentacion/anexos/a4_seguridad
+      - file: es/02_documentacion/anexos/a5_otros
   - caption: Ingeniería del Software
     chapters:
     - file: es/03_ingenieria_software/intro

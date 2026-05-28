@@ -1,6 +1,6 @@
 # Relación con normativa profesional
 
-Desde el curso 2024/25, la página del DIA recomienda seguir un modelo adaptado a partir de normativa profesional de proyectos en Ingeniería Informática {cite:p}`dia_tfg_informatica_2025_2026`.
+La página del DIA recomienda seguir un modelo adaptado a partir de normativa profesional de proyectos en Ingeniería Informática {cite:p}`dia_tfg_informatica_2025_2026`.
 
 La fuente oficial para este contexto profesional es la página de normativa de proyectos en Ingeniería Informática del CPIICM. En ella se presenta la Normativa Técnica de Proyectos en Ingeniería Informática elaborada por el Colegio Profesional de Ingenieros en Informática de la Comunidad de Madrid y el Colegio Oficial de Ingenieros en Informática del País Vasco {cite:p}`cpiicm_normativa_proyectos_2026`.
 

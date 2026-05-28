@@ -12,4 +12,22 @@ Además, la documentación técnica recomendada por el Departamento se relaciona
 Guarda siempre los enlaces oficiales y la versión o curso académico consultado. Las páginas web cambian; tu memoria debe poder justificar qué documentación seguiste.
 ```
 
-Fuentes base de este bloque: página de TFG de la Facultad de Ciencias {cite:p}`fciencias_tfg_page_2026`, página del DIA para el Grado en Ingeniería Informática {cite:p}`dia_tfg_informatica_2025_2026`, reglamentos locales y guía de documentación adaptada {cite:p}`dia_documentacion_tfg_v2`.
+## Ficha de la asignatura
+
+La ficha académica de la asignatura en Guías USAL es otra fuente oficial que conviene tener localizada y revisar en su versión vigente. La ficha consultada identifica el Trabajo Fin de Grado del Grado en Ingeniería Informática con código `101147`, `12 ECTS`, carácter de Trabajo Fin de Grado, ubicación en 4.º curso e idioma español {cite:p}`usal_guia_tfg_informatica_2025_2026`.
+
+Esta ficha no sustituye a los reglamentos ni a las instrucciones de Facultad y Departamento. Su valor está en fijar la naturaleza académica de la asignatura: no es una práctica larga ni una simple demo de software, sino una asignatura final con memoria, seguimiento tutorial y defensa.
+
+## ¿Qué es un TFG en Ingeniería Informática?
+
+En el Grado en Ingeniería Informática, el TFG es un trabajo integrador: debe reunir competencias del título y aplicarlas a un proyecto o trabajo relacionado con los contenidos del grado. La ficha oficial lo presenta como un ejercicio de síntesis en el que el estudiante aprende a desarrollar, documentar, presentar y defender adecuadamente su trabajo ante una audiencia especializada {cite:p}`usal_guia_tfg_informatica_2025_2026`.
+
+En términos prácticos, esto implica tres responsabilidades:
+
+- Construir algo con suficiente entidad técnica: software, prototipo, investigación aplicada, análisis, integración, herramienta, sistema o estudio relacionado con la informática.
+- Documentarlo de forma que otra persona pueda entender el problema, las decisiones, la solución, las pruebas, las limitaciones y el trabajo futuro.
+- Defenderlo oralmente con rigor técnico, claridad y dominio del tema.
+
+Por eso este libro insiste en que la documentación no es burocracia posterior. Es parte del propio TFG: deja evidencia de cómo has trabajado y permite al tribunal evaluar no solo el resultado final, sino también el criterio de ingeniería que hay detrás.
+
+Fuentes base de este bloque: ficha académica de la asignatura {cite:p}`usal_guia_tfg_informatica_2025_2026`, página de TFG de la Facultad de Ciencias {cite:p}`fciencias_tfg_page_2026`, página del DIA para el Grado en Ingeniería Informática {cite:p}`dia_tfg_informatica_2025_2026`, reglamentos locales y guía de documentación adaptada {cite:p}`dia_documentacion_tfg_v2`.

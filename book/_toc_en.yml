@@ -18,8 +18,23 @@ parts:
       - file: en/02_documentation/current_structure
       - file: en/02_documentation/old_structure
       - file: en/02_documentation/mapping
-      - file: en/02_documentation/report
-      - file: en/02_documentation/annexes
+    - file: en/02_documentation/report
+      sections:
+      - file: en/02_documentation/report/introduction
+      - file: en/02_documentation/report/purpose_objectives
+      - file: en/02_documentation/report/background
+      - file: en/02_documentation/report/methods_tools
+      - file: en/02_documentation/report/requirements_scope
+      - file: en/02_documentation/report/proposed_solution
+      - file: en/02_documentation/report/risks_management
+      - file: en/02_documentation/report/conclusions
+    - file: en/02_documentation/annexes
+      sections:
+      - file: en/02_documentation/annexes/a1_system_specifications
+      - file: en/02_documentation/annexes/a2_analysis_design
+      - file: en/02_documentation/annexes/a3_estimation
+      - file: en/02_documentation/annexes/a4_security
+      - file: en/02_documentation/annexes/a5_other_annexes
   - caption: Software Engineering
     chapters:
     - file: en/03_software_engineering/intro

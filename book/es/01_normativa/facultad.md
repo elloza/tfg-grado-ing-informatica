@@ -13,7 +13,7 @@ En esa página aparecen, entre otros recursos:
 
 ## Temporización
 
-La temporización anual es crítica porque fija plazos de matrícula, propuesta, adjudicación, depósito, informe del tutor, defensa y cierre de actas. Para el curso 2025/26, la Facultad publica un documento de temporización que distingue actuaciones generales y plazos específicos del Grado en Ingeniería Informática {cite:p}`fciencias_temporizacion_2025_2026`.
+La temporización anual es crítica porque fija plazos de matrícula, propuesta, adjudicación, depósito, informe del tutor, defensa y cierre de actas. La Facultad publica cada año un documento de temporización que distingue actuaciones generales y plazos específicos del Grado en Ingeniería Informática {cite:p}`fciencias_temporizacion_2025_2026`.
 
 ```{warning}
 No uses fechas de cursos anteriores como referencia operativa. En el libro podemos explicar el proceso, pero las fechas reales deben comprobarse cada curso.
