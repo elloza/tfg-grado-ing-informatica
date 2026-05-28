@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+title: 'Documentacion de un TFG en Ingenieria Informatica en tiempos de IA'
+authors:
+  - family-names: 'Lozano Murciego'
+    given-names: 'Alvaro'
+    affiliation: 'Universidad de Salamanca'
+    city: Salamanca
+    country: ES
+message: 'If you use this book, please cite it using these metadata.'
+preferred-citation:
+  type: book
+  authors:
+    - family-names: 'Lozano Murciego'
+      given-names: 'Alvaro'
+      affiliation: 'Universidad de Salamanca'
+  title: 'Documentacion de un TFG en Ingenieria Informatica en tiempos de IA'
+  year: 2026
+  publisher:
+    name: 'Universidad de Salamanca'
+  url: 'https://github.com/elloza/tfg-grado-ing-informatica'
+  abstract: >-
+    Guia no oficial, opinionated y practica para preparar la documentacion de un
+    Trabajo de Fin de Grado en Ingenieria Informatica en la Universidad de
+    Salamanca en un contexto de herramientas de inteligencia artificial,
+    gestores bibliograficos, documentacion como codigo y revision humana.
+  keywords:
+    - Trabajo de Fin de Grado
+    - Ingenieria Informatica
+    - Universidad de Salamanca
+    - Documentacion tecnica
+    - Inteligencia Artificial
+    - Jupyter Book
+  license: CC-BY-4.0
+  contact:
+    - family-names: 'Lozano Murciego'
+      given-names: 'Alvaro'
+      affiliation: 'Universidad de Salamanca'

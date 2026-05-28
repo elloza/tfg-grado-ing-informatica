@@ -1,0 +1,51 @@
+format: jb-book
+root: es/intro
+parts:
+  - caption: Normativa TFG
+    chapters:
+    - file: es/01_normativa/intro
+      sections:
+      - file: es/01_normativa/usal
+      - file: es/01_normativa/facultad
+      - file: es/01_normativa/dia
+      - file: es/01_normativa/normativa_profesional
+  - caption: Documentacion del TFG
+    chapters:
+    - file: es/02_documentacion/intro
+      sections:
+      - file: es/02_documentacion/normas_estilo
+      - file: es/02_documentacion/citas_bibliografia
+      - file: es/02_documentacion/estructura_actual
+      - file: es/02_documentacion/estructura_antigua
+      - file: es/02_documentacion/correspondencias
+      - file: es/02_documentacion/memoria
+      - file: es/02_documentacion/anexos
+  - caption: Ingenieria del Software
+    chapters:
+    - file: es/03_ingenieria_software/intro
+      sections:
+      - file: es/03_ingenieria_software/metodologias
+      - file: es/03_ingenieria_software/uml_as_code
+      - file: es/03_ingenieria_software/planificacion
+  - caption: Herramientas
+    chapters:
+    - file: es/04_herramientas/intro
+      sections:
+      - file: es/04_herramientas/word
+      - file: es/04_herramientas/latex
+      - file: es/04_herramientas/vscode_ia
+  - caption: Errores y FAQ
+    chapters:
+    - file: es/05_errores_faq/intro
+      sections:
+      - file: es/05_errores_faq/errores_comunes
+      - file: es/05_errores_faq/faq
+  - caption: Defensa
+    chapters:
+    - file: es/06_presentacion/intro
+  - caption: Informacion final
+    chapters:
+    - file: es/90_acerca_de
+    - file: es/91_licencias
+    - file: es/92_como_citar
+    - file: es/93_bibliografia

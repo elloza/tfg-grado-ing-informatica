@@ -1,0 +1,51 @@
+format: jb-book
+root: en/intro
+parts:
+  - caption: TFG Regulations
+    chapters:
+    - file: en/01_regulations/intro
+      sections:
+      - file: en/01_regulations/usal
+      - file: en/01_regulations/faculty
+      - file: en/01_regulations/dia
+      - file: en/01_regulations/professional_standards
+  - caption: TFG Documentation
+    chapters:
+    - file: en/02_documentation/intro
+      sections:
+      - file: en/02_documentation/style_rules
+      - file: en/02_documentation/citations_bibliography
+      - file: en/02_documentation/current_structure
+      - file: en/02_documentation/old_structure
+      - file: en/02_documentation/mapping
+      - file: en/02_documentation/report
+      - file: en/02_documentation/annexes
+  - caption: Software Engineering
+    chapters:
+    - file: en/03_software_engineering/intro
+      sections:
+      - file: en/03_software_engineering/methodologies
+      - file: en/03_software_engineering/uml_as_code
+      - file: en/03_software_engineering/planning
+  - caption: Tools
+    chapters:
+    - file: en/04_tools/intro
+      sections:
+      - file: en/04_tools/word
+      - file: en/04_tools/latex
+      - file: en/04_tools/vscode_ai
+  - caption: Mistakes and FAQ
+    chapters:
+    - file: en/05_mistakes_faq/intro
+      sections:
+      - file: en/05_mistakes_faq/common_mistakes
+      - file: en/05_mistakes_faq/faq
+  - caption: Defense
+    chapters:
+    - file: en/06_presentation/intro
+  - caption: Final Information
+    chapters:
+    - file: en/90_about
+    - file: en/91_licenses
+    - file: en/92_how_to_cite
+    - file: en/93_bibliography
