@@ -313,9 +313,33 @@ function injectGiscusComments() {
         emitMetadata: "0",
         inputPosition: "bottom",
         theme: "preferred_color_scheme",
-        lang: document.documentElement.lang && document.documentElement.lang.startsWith("en") ? "en" : "es",
+        lang: detectBookLanguage(path),
         loading: "lazy",
-        enableLocal: false
+        enableLocal: false,
+        showOnAllPages: false,
+        allowedPaths: [
+            "es/01_normativa/usal.html",
+            "es/01_normativa/facultad.html",
+            "es/01_normativa/dia.html",
+            "es/01_normativa/normativa_profesional.html",
+            "es/02_documentacion/normas_estilo.html",
+            "es/02_documentacion/citas_bibliografia.html",
+            "es/02_documentacion/estructura_actual.html",
+            "es/02_documentacion/estructura_antigua.html",
+            "es/02_documentacion/correspondencias.html",
+            "es/02_documentacion/memoria.html",
+            "es/02_documentacion/anexos.html",
+            "es/03_ingenieria_software/metodologias.html",
+            "es/03_ingenieria_software/uml_as_code.html",
+            "es/03_ingenieria_software/planificacion.html",
+            "es/04_herramientas/word.html",
+            "es/04_herramientas/latex.html",
+            "es/04_herramientas/vscode_ia.html",
+            "es/05_errores_faq/errores_comunes.html",
+            "es/05_errores_faq/faq.html",
+            "es/06_presentacion/intro.html"
+        ],
+        disabledPaths: []
     };
 
     const config = Object.assign(defaultConfig, window.TFG_GISCUS_CONFIG || {});
@@ -330,10 +354,15 @@ function injectGiscusComments() {
         return;
     }
 
+    if (!shouldShowGiscusOnPath(path, config)) {
+        console.info("TFG book: giscus disabled on this page.");
+        return;
+    }
+
     const wrapper = document.createElement("section");
     wrapper.id = "tfg-giscus-thread";
     wrapper.className = "tfg-giscus-thread";
-    wrapper.setAttribute("aria-label", config.lang === "en" ? "Page comments" : "Comentarios de la pagina");
+    wrapper.setAttribute("aria-label", config.lang === "en" ? "Page comments" : "Comentarios de la página");
 
     const title = document.createElement("h2");
     title.textContent = config.lang === "en" ? "Questions and comments" : "Preguntas y comentarios";
@@ -343,7 +372,7 @@ function injectGiscusComments() {
     help.className = "tfg-giscus-help";
     help.textContent = config.lang === "en"
         ? "Use this thread for questions about this page. Useful recurring questions may be incorporated into the FAQ."
-        : "Usa este hilo para dudas sobre esta pagina. Las preguntas recurrentes utiles podran incorporarse a la FAQ.";
+        : "Usa este hilo para dudas sobre esta página. Las preguntas recurrentes útiles podrán incorporarse a la FAQ.";
     wrapper.appendChild(help);
 
     const script = document.createElement("script");
@@ -365,4 +394,40 @@ function injectGiscusComments() {
 
     wrapper.appendChild(script);
     article.appendChild(wrapper);
+}
+
+function shouldShowGiscusOnPath(pathname, config) {
+    const normalizedPath = normalizeGiscusPath(pathname);
+
+    if (pathMatchesGiscusRule(normalizedPath, config.disabledPaths || [])) {
+        return false;
+    }
+
+    if (config.showOnAllPages) {
+        return true;
+    }
+
+    return pathMatchesGiscusRule(normalizedPath, config.allowedPaths || []);
+}
+
+function normalizeGiscusPath(pathname) {
+    let path = (pathname || "").replace(/\\/g, "/");
+    if (path.endsWith("/")) {
+        path += "intro.html";
+    }
+    return path.replace(/^\/+/, "");
+}
+
+function detectBookLanguage(pathname) {
+    const normalizedPath = normalizeGiscusPath(pathname);
+    if (/(^|\/)es\//.test(normalizedPath)) return "es";
+    if (/(^|\/)en\//.test(normalizedPath)) return "en";
+    return document.documentElement.lang && document.documentElement.lang.startsWith("en") ? "en" : "es";
+}
+
+function pathMatchesGiscusRule(normalizedPath, rules) {
+    return rules.some(rule => {
+        const normalizedRule = String(rule || "").replace(/^\/+/, "");
+        return normalizedRule === "*" || normalizedPath.endsWith(normalizedRule);
+    });
 }

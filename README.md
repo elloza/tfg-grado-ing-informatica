@@ -61,13 +61,16 @@ python scripts/check_multilang_integrity.py
 
 ## Comentarios
 
-La version web integra comentarios por pagina con Giscus y GitHub Discussions.
+La versión web integra comentarios por página con Giscus y GitHub Discussions.
 
-Configuracion actual:
+Configuración actual:
 
 - Repositorio: `elloza/tfg-grado-ing-informatica`.
-- Categoria: `Announcements`.
+- Categoría: `Announcements`.
 - Mapeo: `pathname`, con coincidencia estricta.
 - Carga local: desactivada por defecto para no crear hilos desde `localhost`.
+- Páginas activas: allowlist en `book/_static/custom.js`, pensada para páginas centrales. Las portadas, introducciones de bloque, búsqueda, índice y páginas finales no muestran comentarios.
 
-Para que funcione en produccion, el repositorio debe ser publico, tener Discussions activo y tener instalada la app de Giscus: <https://github.com/apps/giscus>.
+Para activar comentarios en una página concreta, añade su ruta HTML a `allowedPaths`, por ejemplo `es/02_documentacion/memoria.html`. Para activar comentarios en todo el libro, usa `showOnAllPages: true`; para excluir páginas concretas, usa `disabledPaths`.
+
+Para que funcione en producción, el repositorio debe ser público, tener Discussions activo y tener instalada la app de Giscus: <https://github.com/apps/giscus>.
