@@ -61,4 +61,13 @@ python scripts/check_multilang_integrity.py
 
 ## Comentarios
 
-La version web esta preparada para integrar comentarios por pagina con Giscus y GitHub Discussions. Para activarlos hay que completar `repoId` y `categoryId` en `book/_static/custom.js` o definir `window.TFG_GISCUS_CONFIG` antes de cargar el script.
+La version web integra comentarios por pagina con Giscus y GitHub Discussions.
+
+Configuracion actual:
+
+- Repositorio: `elloza/tfg-grado-ing-informatica`.
+- Categoria: `Announcements`.
+- Mapeo: `pathname`, con coincidencia estricta.
+- Carga local: desactivada por defecto para no crear hilos desde `localhost`.
+
+Para que funcione en produccion, el repositorio debe ser publico, tener Discussions activo y tener instalada la app de Giscus: <https://github.com/apps/giscus>.

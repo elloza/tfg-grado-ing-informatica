@@ -304,21 +304,29 @@ function injectGiscusComments() {
 
     const defaultConfig = {
         repo: "elloza/tfg-grado-ing-informatica",
-        repoId: "",
-        category: "General",
-        categoryId: "",
+        repoId: "R_kgDOSqGbzg",
+        category: "Announcements",
+        categoryId: "DIC_kwDOSqGbzs4C-AWx",
         mapping: "pathname",
-        strict: "0",
+        strict: "1",
         reactionsEnabled: "1",
         emitMetadata: "0",
         inputPosition: "bottom",
         theme: "preferred_color_scheme",
-        lang: document.documentElement.lang && document.documentElement.lang.startsWith("en") ? "en" : "es"
+        lang: document.documentElement.lang && document.documentElement.lang.startsWith("en") ? "en" : "es",
+        loading: "lazy",
+        enableLocal: false
     };
 
     const config = Object.assign(defaultConfig, window.TFG_GISCUS_CONFIG || {});
     if (!config.repo || !config.repoId || !config.category || !config.categoryId) {
         console.info("TFG book: giscus is not fully configured yet. Set repoId and categoryId in custom.js or window.TFG_GISCUS_CONFIG.");
+        return;
+    }
+
+    const localHosts = new Set(["localhost", "127.0.0.1", "::1", ""]);
+    if (!config.enableLocal && localHosts.has(window.location.hostname)) {
+        console.info("TFG book: giscus is configured but disabled on local preview.");
         return;
     }
 
@@ -353,6 +361,7 @@ function injectGiscusComments() {
     script.setAttribute("data-input-position", config.inputPosition);
     script.setAttribute("data-theme", config.theme);
     script.setAttribute("data-lang", config.lang);
+    script.setAttribute("data-loading", config.loading);
 
     wrapper.appendChild(script);
     article.appendChild(wrapper);
