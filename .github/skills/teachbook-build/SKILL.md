@@ -52,6 +52,13 @@ Antes de compilar contenido nuevo o modificado, comprobar siempre la codificaci�
 
 Esta comprobación es obligatoria antes de publicar. Revisa archivos de contenido, notebooks, configuraciones, scripts, skills, fuentes de diagramas, workflows y textos sin extensión como `LICENSE` o `CODEOWNERS`. Si falla, corregir el archivo indicado antes de compilar o hacer commit.
 
+Si se ha tocado texto visible en español (`book/es/`, `_config_es.yml`, `_toc_es.yml`, `references.bib` o skills), ejecutar también la comprobación ortográfica básica antes del build. Hay que corregir tildes omitidas y títulos interrogativos sin signo de apertura:
+
+| Sistema | Comando |
+|---|---|
+| Linux / macOS | `.venv/bin/python scripts/check_spanish_orthography.py` |
+| Windows | `.venv\Scripts\python.exe scripts\check_spanish_orthography.py` |
+
 Si se han añadido o cambiado imágenes, GIFs o logos, comprobar también que los assets estáticos son aptos para web/PDF:
 
 | Sistema | Comando |

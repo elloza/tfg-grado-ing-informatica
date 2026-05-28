@@ -50,6 +50,8 @@ El agente DEBE usar el Python del entorno virtual (`.venv`):
 
 No hacer `git push` manual si este check falla. Primero corregir el archivo indicado y repetir la comprobación en local.
 
+Antes de publicar cambios que afecten a texto visible en español, ejecutar también `scripts/check_spanish_orthography.py` con el Python de `.venv`. No publicar si quedan palabras frecuentes sin tilde (`Documentación`, `Ingeniería`, `código`, `bibliografía`, etc.) o títulos/preguntas sin `¿`. El script es una red de seguridad; una lectura humana rápida sigue siendo obligatoria.
+
 ### Si el script dice "No hay cambios para guardar"
 
 Significa que no se ha modificado ningún archivo desde el último commit. No es un error.

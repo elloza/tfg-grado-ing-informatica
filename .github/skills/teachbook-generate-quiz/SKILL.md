@@ -13,6 +13,8 @@ description: >
 
 Estos cuestionarios son **herramientas de estudio**, no un sistema LMS. No hay auto-evaluación ni puntuación automática. El estudiante piensa la respuesta y la compara.
 
+En cuestionarios en español, las preguntas deben usar signos de apertura (`¿...?`) y tildes en interrogativos (`qué`, `cómo`, `cuál`, `cuándo`, `dónde`, `por qué`). Antes de cerrar contenido español nuevo, ejecutar `python scripts/check_spanish_orthography.py`.
+
 ## Patrón 1: Admonition con dropdown
 
 Usa la directiva `{admonition}` con `:class: dropdown`. Funciona en HTML (colapsable) y PDF (se muestra expandido).

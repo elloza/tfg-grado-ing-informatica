@@ -15,6 +15,8 @@ description: >
 
 Todo contenido multimedia debe funcionar en **HTML** (web) y en **PDF** (imprimible). Los patrones de esta skill garantizan compatibilidad con ambos formatos.
 
+Los captions, textos alternativos, notas y fallbacks en español deben pasar revisión ortográfica: tildes, eñes y signos de apertura en preguntas. Si se edita texto visible en español, ejecutar `python scripts/check_spanish_orthography.py` antes de publicar.
+
 ---
 
 ## 1. Imágenes
@@ -116,8 +118,8 @@ Usar este patrón para audios alojados en `book/_static/audio/`. NUNCA usar `<au
 
 ```{raw} latex
 \begin{center}
-\textbf{Audio: titulo del recurso}\\
-Archivo local: \texttt{book/\_static/audio/mi\_audio.mp3}. Consulte la version digital para reproducirlo.
+\textbf{Audio: título del recurso}\\
+Archivo local: \texttt{book/\_static/audio/mi\_audio.mp3}. Consulte la versión digital para reproducirlo.
 \end{center}
 ```
 ````

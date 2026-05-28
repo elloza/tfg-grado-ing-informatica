@@ -19,6 +19,8 @@ Kroki convierte texto en **imágenes de diagramas**. El profesor escribe la sint
 
 El agente NO debe pensar en Kroki como “solo Mermaid”. Kroki es una capa para generar artefactos visuales desde lenguajes intermedios. La elección correcta depende del tipo de diagrama.
 
+En diagramas en español, revisar también la ortografía de etiquetas, captions y textos alternativos: tildes, eñes y preguntas con `¿...?`. Si se modifica texto visible en español, ejecutar `python scripts/check_spanish_orthography.py`.
+
 ## Ventajas
 
 - ✅ Funciona en **HTML y PDF** (se renderiza como imagen SVG)

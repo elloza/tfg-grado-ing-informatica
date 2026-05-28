@@ -8,7 +8,7 @@ Un TFG de Informática se beneficia de trabajar en un entorno centrado en códig
 - Revisar claridad, estructura y coherencia.
 - Detectar inconsistencias entre requisitos, diseño y pruebas.
 - Convertir diagramas a Mermaid o PlantUML.
-- Crear checklists de revision.
+- Crear checklists de revisión.
 - Preparar preguntas posibles del tribunal.
 
 ## Límites

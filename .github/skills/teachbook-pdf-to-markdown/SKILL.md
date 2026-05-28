@@ -107,6 +107,7 @@ Después de convertir, el agente DEBE:
 - Verificar que los títulos tienen la jerarquía correcta (`#`, `##`, `###`).
 - Comprobar que las listas y párrafos están bien formateados.
 - Revisar que no hay texto corrupto o caracteres extraños.
+- Si el resultado está en español, corregir tildes e interrogativos y ejecutar `python scripts/check_spanish_orthography.py` antes de integrarlo como contenido final.
 
 ### 2. Corregir problemas comunes
 

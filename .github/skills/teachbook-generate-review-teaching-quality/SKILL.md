@@ -27,6 +27,7 @@ El agente debe evaluar CADA uno de los siguientes criterios:
 | 4 | **Visualizaciones** | ¿Hay gráficas, diagramas, tablas o imágenes que refuercen el contenido? |
 | 5 | **Ejercicios propuestos** | ¿Se proponen ejercicios o preguntas al estudiante? |
 | 6 | **Longitud adecuada** | ¿La página tiene más de 200 líneas? Si es así, sugerir dividirla. |
+| 7 | **Ortografía española** | En páginas ES, ¿hay tildes correctas, signos `¿...?` en preguntas y títulos interrogativos, y ausencia de palabras por descuido que deberían ser `Documentación`, `Ingeniería`, `código` o `bibliografía`? |
 
 ### Criterios técnicos
 
@@ -83,9 +84,10 @@ El agente debe evaluar CADA uno de los siguientes criterios:
 1. **Identificar alcance** — Preguntar qué página/sección/capítulo revisar. Si no especifica, revisar todo el libro.
 2. **Leer los archivos** — Leer el contenido de cada archivo y su equivalente en otros idiomas.
 3. **Verificar TOC** — Leer `_toc_<lang>.yml` para cada idioma y cruzar con archivos existentes.
-4. **Evaluar cada criterio** — Aplicar el checklist completo a cada página.
-5. **Generar informe** — Usar el formato de arriba con ✅/❌/⚠️.
-6. **Ofrecer correcciones** — Preguntar si el usuario quiere que se corrijan automáticamente los problemas encontrados.
+4. **Verificar ortografía ES** — Si se revisa contenido español, ejecutar `python scripts/check_spanish_orthography.py` con el Python de `.venv` y contrastar sus hallazgos con una lectura manual.
+5. **Evaluar cada criterio** — Aplicar el checklist completo a cada página.
+6. **Generar informe** — Usar el formato de arriba con ✅/❌/⚠️.
+7. **Ofrecer correcciones** — Preguntar si el usuario quiere que se corrijan automáticamente los problemas encontrados.
 
 ## Cómo verificar sincronización multi-idioma
 

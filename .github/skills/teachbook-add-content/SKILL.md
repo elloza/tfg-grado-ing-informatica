@@ -27,6 +27,8 @@ description: >
 
 > **Codificación obligatoria:** todo archivo de contenido, configuración, notebook, script o skill debe guardarse como **UTF-8**. No se admite mojibake, caracteres de reemplazo (`U+FFFD`) ni sustituir letras con tilde por `?`. Antes de cerrar cambios de contenido, ejecutar `python scripts/check_encoding.py` o `python scripts/check_multilang_integrity.py` con el Python de `.venv`.
 
+> **Ortografía española obligatoria:** cualquier texto visible en español debe revisarse antes de cerrar el cambio. No dejar palabras sin tilde por comodidad (`Documentación`, `Ingeniería`, `código`, `bibliografía`, `técnico`, `práctico`, etc.) y usar signos de apertura en títulos/preguntas (`¿Qué...?`, `¿Cómo...?`). Tras editar `book/es/`, `_config_es.yml`, `_toc_es.yml`, `references.bib` o skills en español, ejecutar `python scripts/check_spanish_orthography.py` con el Python de `.venv` y corregir lo que marque.
+
 ## Regla obligatoria de captions y referencias
 
 Cuando añadas contenido nuevo, aplica esta norma en **TODOS los idiomas**:
@@ -337,17 +339,26 @@ El agente DEBE ejecutar estas verificaciones ANTES de commit:
    | Linux / macOS | `.venv/bin/python scripts/check_multilang_integrity.py` |
    | Windows | `.venv\Scripts\python.exe scripts/check_multilang_integrity.py` |
 
-3. Si se han añadido o cambiado imágenes, vídeos o GIFs, validar assets estáticos:
+3. Si se ha editado texto visible en español, ejecutar la comprobación ortográfica básica:
+
+   | Sistema | Comando |
+   |---|---|
+   | Linux / macOS | `.venv/bin/python scripts/check_spanish_orthography.py` |
+   | Windows | `.venv\Scripts\python.exe scripts\check_spanish_orthography.py` |
+
+   Este check no sustituye la lectura humana: detecta faltas recurrentes de tildes y títulos interrogativos sin `¿`. Si marca una línea, corregirla o justificar mentalmente que es un falso positivo antes de continuar.
+
+4. Si se han añadido o cambiado imágenes, vídeos o GIFs, validar assets estáticos:
 
    | Sistema | Comando |
    |---|---|
    | Linux / macOS | `.venv/bin/python scripts/optimize_static_assets.py --check` |
    | Windows | `.venv\Scripts\python.exe scripts\optimize_static_assets.py --check` |
 
-4. Confirmar que cada `_toc_<lang>.yml` tiene la **misma forma**: mismas partes, mismos capítulos, mismas secciones y mismo orden.
-5. Confirmar que cada entrada `file:` apunta a un archivo `.md` o `.ipynb` existente.
-6. Confirmar que no hay archivos huérfanos en `book/<lang>/` fuera del TOC.
-7. **Reportar** cualquier diferencia de menú, archivo huérfano, entrada rota, problema de codificación o asset estático sin fallback. No ocultes el problema.
+5. Confirmar que cada `_toc_<lang>.yml` tiene la **misma forma**: mismas partes, mismos capítulos, mismas secciones y mismo orden.
+6. Confirmar que cada entrada `file:` apunta a un archivo `.md` o `.ipynb` existente.
+7. Confirmar que no hay archivos huérfanos en `book/<lang>/` fuera del TOC.
+8. **Reportar** cualquier diferencia de menú, archivo huérfano, entrada rota, problema de codificación, problema ortográfico o asset estático sin fallback. No ocultes el problema.
 
 La comprobación automática es obligatoria aunque el cambio parezca pequeño. En un libro multi-idioma, “solo he tocado una página” puede romper el menú lateral de otro idioma.
 
