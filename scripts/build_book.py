@@ -680,6 +680,30 @@ def create_redirect_index(default_lang="es"):
     print(f"🔀 Redirección raíz creada apuntando a: /{default_lang}/")
 
 
+def create_language_redirect_indices(languages):
+    """Create /<lang>/ index redirects so directory URLs work on static hosts."""
+    for lang in languages:
+        if lang == "default":
+            continue
+        lang_dir = os.path.join(FINAL_HTML_DIR, lang)
+        if not os.path.isdir(lang_dir):
+            continue
+        redirect_html = """<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="refresh" content="0; url=intro.html" />
+    <script>window.location.href = "intro.html";</script>
+</head>
+<body>
+    <p>Redirecting to <a href="intro.html">intro</a>...</p>
+</body>
+</html>
+"""
+        with open(os.path.join(lang_dir, "index.html"), "w", encoding="utf-8") as f:
+            f.write(redirect_html)
+        print(f"Language redirect created: /{lang}/ -> intro.html")
+
+
 def main():
     print("📚 Iniciando proceso de construcción multi-idioma...")
     languages = get_languages()
@@ -728,6 +752,7 @@ def main():
         if default_lang not in languages:
             default_lang = languages[0]
         create_redirect_index(default_lang)
+        create_language_redirect_indices(languages)
 
         # Create root search.html that redirects to default language search
         # CRITICAL: preserve query string (?q=...) so search terms survive the redirect
