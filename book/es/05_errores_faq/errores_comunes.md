@@ -2,17 +2,17 @@
 
 ## Empezar la memoria demasiado tarde
 
-La memoria no se escribe al final. Se construye durante el proyecto. Si esperas a tener todo programado, perderas decisiones, problemas y justificaciones.
+La memoria no se escribe al final. Se construye durante el proyecto. Si esperas a tener todo programado, perderás decisiones, problemas y justificaciones.
 
-## Confundir teoria con contexto
+## Confundir teoría con contexto
 
-No incluyas diez paginas sobre una tecnologia si luego no explicas como la usaste. La teoria debe servir al TFG.
+No incluyas diez páginas sobre una tecnología si luego no explicas cómo la usaste. La teoría debe servir al TFG.
 
 ## No justificar decisiones
 
 Elegir framework, arquitectura, base de datos o modelo de IA requiere criterio. "Porque es popular" no basta.
 
-## Bibliografia manual
+## Bibliografía manual
 
 No uses referencias a mano. Usa Mendeley o Zotero y revisa metadatos.
 
@@ -22,7 +22,7 @@ Todo diagrama debe estar explicado y referenciado. Si no se usa para razonar, pr
 
 ## Gantt inventado al final
 
-La planificacion debe explicar como se gestiono el trabajo. Si hubo desviaciones, se cuentan.
+La planificación debe explicar cómo se gestionó el trabajo. Si hubo desviaciones, se cuentan.
 
 ## No ensayar la defensa
 

@@ -1,22 +1,22 @@
-# Creditos
+# Créditos
 
-Autor: **Alvaro Lozano Murciego**.
+Autor: **Álvaro Lozano Murciego**.
 
-Ano de publicacion: **2026**.
+Año de publicación: **2026**.
 
-Este libro nace como una guia no oficial para ayudar al alumnado del Grado en Ingenieria Informatica de la Universidad de Salamanca a preparar la documentacion del Trabajo de Fin de Grado en un contexto en el que las herramientas de IA, los editores de codigo y los flujos de documentacion reproducible cambian la forma de trabajar.
+Este libro nace como una guía no oficial para ayudar al alumnado del Grado en Ingeniería Informática de la Universidad de Salamanca a preparar la documentación del Trabajo de Fin de Grado en un contexto en el que las herramientas de IA, los editores de código y los flujos de documentación reproducible cambian la forma de trabajar.
 
 ## Reconocimientos
 
 Este material se apoya en:
 
-- La normativa y documentacion oficial de la Universidad de Salamanca, la Facultad de Ciencias y el Departamento de Informatica y Automatica.
-- La guia actual de documentacion del TFG de Ingenieria Informatica.
-- Los recursos historicos de Proyecto Fin de Carrera en ITIS elaborados por profesorado vinculado al area.
-- TeachBooks, Jupyter Book y MyST Markdown como infraestructura tecnica.
-- Herramientas abiertas y profesionales usadas en documentacion tecnica, bibliografia, diagramas y desarrollo software.
-- Giscus como sistema de comentarios basado en GitHub Discussions para la version web {cite:p}`giscus_project`.
+- La normativa y documentación oficial de la Universidad de Salamanca, la Facultad de Ciencias y el Departamento de Informática y Automática.
+- La guía actual de documentación del TFG de Ingeniería Informática.
+- Los recursos históricos de Proyecto Fin de Carrera en ITIS elaborados por profesorado vinculado al área.
+- TeachBooks, Jupyter Book y MyST Markdown como infraestructura técnica.
+- Herramientas abiertas y profesionales usadas en documentación técnica, bibliografía, diagramas y desarrollo software.
+- Giscus como sistema de comentarios basado en GitHub Discussions para la versión web {cite:p}`giscus_project`.
 
 ## Documento vivo
 
-La version web puede incorporar preguntas y comentarios por pagina. Las dudas utiles se revisaran y podran integrarse en la FAQ o en futuras versiones del libro.
+La versión web puede incorporar preguntas y comentarios por página. Las dudas útiles se revisarán y podrán integrarse en la FAQ o en futuras versiones del libro.

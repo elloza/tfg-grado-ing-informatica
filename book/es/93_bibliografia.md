@@ -1,4 +1,4 @@
-# Bibliografia
+# Bibliografía
 
 ```{bibliography}
 :cited:

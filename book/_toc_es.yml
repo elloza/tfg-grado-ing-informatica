@@ -9,7 +9,7 @@ parts:
       - file: es/01_normativa/facultad
       - file: es/01_normativa/dia
       - file: es/01_normativa/normativa_profesional
-  - caption: Documentacion del TFG
+  - caption: Documentación del TFG
     chapters:
     - file: es/02_documentacion/intro
       sections:
@@ -20,7 +20,7 @@ parts:
       - file: es/02_documentacion/correspondencias
       - file: es/02_documentacion/memoria
       - file: es/02_documentacion/anexos
-  - caption: Ingenieria del Software
+  - caption: Ingeniería del Software
     chapters:
     - file: es/03_ingenieria_software/intro
       sections:
@@ -43,7 +43,7 @@ parts:
   - caption: Defensa
     chapters:
     - file: es/06_presentacion/intro
-  - caption: Informacion final
+  - caption: Información final
     chapters:
     - file: es/90_acerca_de
     - file: es/91_licencias

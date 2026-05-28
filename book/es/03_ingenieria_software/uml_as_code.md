@@ -1,29 +1,29 @@
-# UML y documentacion como codigo
+# UML y documentación como código
 
-Los diagramas deben ayudar a entender. Un diagrama que no se menciona en el texto o que no aclara una decision sobra.
+Los diagramas deben ayudar a entender. Un diagrama que no se menciona en el texto o que no aclara una decisión sobra.
 
-Hoy es muy recomendable mantener diagramas como codigo cuando sea posible:
+Hoy es muy recomendable mantener diagramas como código cuando sea posible:
 
-- Mermaid para diagramas simples y rapidos.
-- PlantUML para UML mas expresivo.
+- Mermaid para diagramas simples y rápidos.
+- PlantUML para UML más expresivo.
 - Kroki para renderizar distintos lenguajes de diagramas.
 - Structurizr/C4 para arquitectura cuando encaje.
 
 ## Ventajas
 
 - Los diagramas se versionan con Git.
-- Es mas facil revisarlos en pull requests.
-- Se pueden regenerar si cambia el diseno.
-- Evitan imagenes editadas a mano sin fuente.
+- Es más fácil revisarlos en pull requests.
+- Se pueden regenerar si cambia el diseño.
+- Evitan imágenes editadas a mano sin fuente.
 
-## Diagramas utiles en un TFG
+## Diagramas útiles en un TFG
 
 - Casos de uso o mapa de historias.
 - Diagrama de clases o modelo de dominio.
-- Diagramas de secuencia para flujos criticos.
+- Diagramas de secuencia para flujos críticos.
 - Diagrama de componentes.
 - Diagrama de despliegue.
-- Modelo entidad-relacion o esquema de datos.
+- Modelo entidad-relación o esquema de datos.
 - Diagramas de actividad para procesos complejos.
 
-La regla es simple: cada diagrama debe tener fuente, titulo, explicacion y referencia en el texto.
+La regla es simple: cada diagrama debe tener fuente, título, explicación y referencia en el texto.

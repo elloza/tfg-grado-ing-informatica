@@ -1,27 +1,27 @@
-# Planificacion, riesgos y pruebas
+# Planificación, riesgos y pruebas
 
-La planificacion de un TFG no debe ser una prediccion perfecta. Debe ser una herramienta para razonar sobre trabajo, tiempo, riesgo y alcance.
+La planificación de un TFG no debe ser una predicción perfecta. Debe ser una herramienta para razonar sobre trabajo, tiempo, riesgo y alcance.
 
-## Planificacion
+## Planificación
 
 Incluye fases, hitos y entregables:
 
 - Propuesta y alcance.
-- Revision bibliografica o estado del arte.
+- Revisión bibliográfica o estado del arte.
 - Requisitos.
-- Diseno.
-- Implementacion.
+- Diseño.
+- Implementación.
 - Pruebas.
-- Escritura y revision de memoria.
-- Preparacion de defensa.
+- Escritura y revisión de memoria.
+- Preparación de defensa.
 
 El Gantt sirve si refleja decisiones reales. Si se hizo al final para decorar, se nota.
 
 ## Riesgos
 
-Los riesgos mas frecuentes son:
+Los riesgos más frecuentes son:
 
-- Dependencias tecnicas que no funcionan como se esperaba.
+- Dependencias técnicas que no funcionan como se esperaba.
 - Falta de datos o datos de baja calidad.
 - Alcance excesivo.
 - Integraciones externas.
@@ -32,9 +32,9 @@ Los riesgos mas frecuentes son:
 
 Documenta pruebas de forma proporcional:
 
-- Unitarias cuando haya logica aislable.
-- Integracion si hay APIs, bases de datos o servicios.
-- Aceptacion si hay funcionalidades principales.
+- Unitarias cuando haya lógica aislable.
+- Integración si hay APIs, bases de datos o servicios.
+- Aceptación si hay funcionalidades principales.
 - Usabilidad si hay usuarios.
 - Rendimiento si es relevante.
 
