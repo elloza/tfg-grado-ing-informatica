@@ -23,6 +23,7 @@ html_theme_options:
   icon_links: []
 sphinx:
   extra_extensions:
+    - sphinx_apa_citations
     - sphinx_thebe
     - sphinxcontrib.bibtex
     - sphinx_kroki
@@ -34,6 +35,8 @@ sphinx:
     - custom.js
     bibtex_bibfiles:
     - _static/references.bib
+    bibtex_default_style: plain
+    bibtex_reference_style: apa_author_year
     thebe_config:
       always_load: false
       repository_url: https://github.com/binder-examples/jupyter-stacks-datascience
@@ -50,13 +53,13 @@ latex_docclass:
 latex:
   latex_engine: xelatex
   options: "spanish"
-  subtitle: "Una guía no oficial, opinionated y práctica para documentar el TFG en la USAL"
+  subtitle: "Una guía no oficial, académica y práctica para documentar el TFG en la USAL"
   header_title: |
     Documentación de un TFG
     en tiempos de IA
   institution: "Universidad de Salamanca"
   edition: "1.ª edición"
-  cover_logo: "_static/usal_logo.png"
+  cover_logo: "_static/tfg-ia-cover-mark.png"
   preamble: |
     \usepackage[spanish]{babel}
     \selectlanguage{spanish}

@@ -50,6 +50,8 @@ def get_jupyter_book():
 # Configuration
 BOOK_DIR = "book"
 STATIC_DIR = os.path.join(BOOK_DIR, "_static")
+PDF_FILENAME_PREFIX = "DocumentacionTFGenTiemposDeIA"
+SPHINX_EXTENSION_FILES = ["sphinx_apa_citations.py"]
 SUPPORTED_ENGINES = ("tectonic", "latexmk", "auto")
 VERBOSE = "--verbose" in sys.argv or "-v" in sys.argv
 PDF_REQUIRED_DISTS = [
@@ -75,6 +77,25 @@ def get_languages():
         return ["default"]  # Single language mode
 
     return sorted(languages)
+
+
+def copy_project_sphinx_extensions(dest_dir):
+    """Copy lightweight project Sphinx extensions into standalone build roots."""
+    for filename in SPHINX_EXTENSION_FILES:
+        source = os.path.join(PROJECT_ROOT, filename)
+        if os.path.isfile(source):
+            shutil.copy2(source, os.path.join(dest_dir, filename))
+
+
+def get_sphinx_env():
+    """Return an environment where project-local Sphinx extensions are importable."""
+    env = os.environ.copy()
+    pythonpath = env.get("PYTHONPATH", "")
+    paths = [PROJECT_ROOT]
+    if pythonpath:
+        paths.append(pythonpath)
+    env["PYTHONPATH"] = os.pathsep.join(paths)
+    return env
 
 
 def verify_pdf_python_requirements():
@@ -886,7 +907,7 @@ def build_pdf_for_lang(lang, engine_name):
     else:
         config_file = f"_config_{lang}.yml"
         toc_file = f"_toc_{lang}.yml"
-        pdf_filename = f"teachbook_{lang}.pdf"
+        pdf_filename = f"{PDF_FILENAME_PREFIX}_{lang}.pdf"
         temp_mode = True
 
     if temp_mode:
@@ -899,6 +920,7 @@ def build_pdf_for_lang(lang, engine_name):
         lang_src = os.path.join(BOOK_DIR, lang)
         lang_dst = os.path.join(temp_root, lang)
         print(f"📂 Preparando entorno standalone PDF: {temp_root}")
+        copy_project_sphinx_extensions(temp_root)
         shutil.copytree(lang_src, lang_dst)
 
         static_src = os.path.join(BOOK_DIR, "_static")
@@ -956,7 +978,7 @@ def build_pdf_for_lang(lang, engine_name):
             return False
 
         cmd = [jupyter_book, "build", "--builder", "latex", src_dir, "--all"]
-        subprocess.run(cmd, shell=(os.name == "nt"), check=True)
+        subprocess.run(cmd, shell=(os.name == "nt"), check=True, env=get_sphinx_env())
     except subprocess.CalledProcessError as e:
         print(f"❌ Error en jupyter-book build ({lang}): {e}")
         return False
@@ -1309,7 +1331,7 @@ Uso:
   python scripts/export_pdf.py --verbose                         # muestra el log completo en pantalla
 
 La opción --allow-existing es un salvavidas para despliegue: NO oculta el fallo
-de generación, pero permite publicar la web si `book/_static/teachbook_<lang>.pdf`
+de generación, pero permite publicar la web si `book/_static/DocumentacionTFGenTiemposDeIA_<lang>.pdf`
 ya existe y tiene contenido.
 
 Por defecto se muestra una salida resumida para docentes. Los logs completos se
@@ -1360,7 +1382,7 @@ guardan en `.build_logs/` y, si algo falla, se imprime la cola relevante del err
         if allow_existing:
             missing_or_empty = []
             for lang in languages:
-                pdf_path = os.path.join(STATIC_DIR, f"teachbook_{lang}.pdf")
+                pdf_path = os.path.join(STATIC_DIR, f"{PDF_FILENAME_PREFIX}_{lang}.pdf")
                 if not os.path.isfile(pdf_path) or os.path.getsize(pdf_path) == 0:
                     missing_or_empty.append(pdf_path)
 

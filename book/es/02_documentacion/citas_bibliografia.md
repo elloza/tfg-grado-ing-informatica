@@ -39,7 +39,7 @@ Zotero es una alternativa muy sólida, especialmente si quieres un ecosistema ab
 
 ## Estilo bibliográfico
 
-Si tu tutor, la comisión o la normativa vigente exigen un estilo, usa ese. La guía de documentación del DIA indica que la bibliografía debe citarse adecuadamente siguiendo el estándar que se considere más oportuno {cite:p}`dia_documentacion_tfg_v2`. En Ingeniería Informática, si no hay una indicación concreta, IEEE suele ser una opción más natural que APA. En cualquier caso, la consistencia pesa más que la preferencia personal.
+Si tu tutor, la comisión o la normativa vigente exigen un estilo, usa ese. La guía de documentación del DIA indica que la bibliografía debe citarse adecuadamente siguiendo el estándar que se considere más oportuno {cite:p}`dia_documentacion_tfg_v2`. En este libro se usa un formato tipo APA, con citas de autor y año, porque encaja mejor con una guía académica que combina normativa, documentación web, manuales y referencias docentes. En una memoria de TFG, este formato ayuda a leer de dónde viene cada idea sin obligar al lector a saltar continuamente a una lista numerada. Si tu tutor, la comisión o una plantilla oficial exigen IEEE u otro estilo, esa indicación prevalece. En cualquier caso, la consistencia pesa más que la preferencia personal.
 
 ```{important}
 La IA puede ayudarte a detectar referencias incompletas, pero no debe inventar fuentes. Toda referencia debe existir, ser pertinente y haber sido consultada por el autor.

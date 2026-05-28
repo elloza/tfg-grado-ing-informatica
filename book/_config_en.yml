@@ -23,6 +23,7 @@ html_theme_options:
   icon_links: []
 sphinx:
   extra_extensions:
+    - sphinx_apa_citations
     - sphinx_thebe
     - sphinxcontrib.bibtex
     - sphinx_kroki
@@ -34,6 +35,8 @@ sphinx:
     - custom.js
     bibtex_bibfiles:
     - _static/references.bib
+    bibtex_default_style: plain
+    bibtex_reference_style: apa_author_year
     thebe_config:
       always_load: false
       repository_url: https://github.com/binder-examples/jupyter-stacks-datascience
@@ -50,13 +53,13 @@ latex_docclass:
 latex:
   latex_engine: xelatex
   options: "english"
-  subtitle: "An unofficial, opinionated and practical guide for TFG documentation at USAL"
+  subtitle: "An unofficial, academic and practical guide for TFG documentation at USAL"
   header_title: |
     TFG Documentation
     in the AI Era
   institution: "Universidad de Salamanca"
   edition: "1st Edition"
-  cover_logo: "_static/usal_logo.png"
+  cover_logo: "_static/tfg-ia-cover-mark.png"
   preamble: |
     \usepackage[english]{babel}
     \selectlanguage{english}

@@ -11,7 +11,7 @@
   <p>
     <a href="https://elloza.com/tfg-grado-ing-informatica/">Web</a> ·
     <a href="https://elloza.com/tfg-grado-ing-informatica/es/intro.html">Leer en español</a> ·
-    <a href="https://elloza.com/tfg-grado-ing-informatica/_static/teachbook_es.pdf">PDF</a> ·
+    <a href="https://elloza.com/tfg-grado-ing-informatica/_static/DocumentacionTFGenTiemposDeIA_es.pdf">PDF</a> ·
     <a href="https://github.com/elloza/tfg-grado-ing-informatica/discussions">Discusiones</a>
   </p>
 
@@ -58,8 +58,8 @@ La versión publicada está disponible en:
 
 - Web principal: <https://elloza.com/tfg-grado-ing-informatica/>
 - GitHub Pages: <https://elloza.github.io/tfg-grado-ing-informatica/>
-- PDF en español: <https://elloza.com/tfg-grado-ing-informatica/_static/teachbook_es.pdf>
-- PDF en inglés: <https://elloza.com/tfg-grado-ing-informatica/_static/teachbook_en.pdf>
+- PDF en español: <https://elloza.com/tfg-grado-ing-informatica/_static/DocumentacionTFGenTiemposDeIA_es.pdf>
+- PDF en inglés: <https://elloza.com/tfg-grado-ing-informatica/_static/DocumentacionTFGenTiemposDeIA_en.pdf>
 
 La rama `main` dispara el workflow `deploy-book`, que genera los PDFs, compila la web estática y despliega GitHub Pages.
 

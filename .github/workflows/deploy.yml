@@ -72,15 +72,15 @@ jobs:
               for path in Path("book").glob("_config_*.yml")
           )
           missing = [
-              Path("book/_static") / f"teachbook_{lang}.pdf"
+              Path("book/_static") / f"DocumentacionTFGenTiemposDeIA_{lang}.pdf"
               for lang in langs
-              if not (Path("book/_static") / f"teachbook_{lang}.pdf").is_file()
+              if not (Path("book/_static") / f"DocumentacionTFGenTiemposDeIA_{lang}.pdf").is_file()
           ]
           if missing:
               for path in missing:
                   print(f"Missing generated PDF: {path}")
               raise SystemExit(1)
-          print("Generated PDFs:", ", ".join(f"teachbook_{lang}.pdf" for lang in langs))
+          print("Generated PDFs:", ", ".join(f"DocumentacionTFGenTiemposDeIA_{lang}.pdf" for lang in langs))
           PY
 
       - name: Build HTML book

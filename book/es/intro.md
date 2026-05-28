@@ -29,5 +29,5 @@ La versión HTML permite dejar preguntas por página mediante comentarios. Las d
 
 También puedes descargar la versión imprimible:
 
-- [Descargar PDF en español](../_static/teachbook_es.pdf)
-- [Download PDF in English](../_static/teachbook_en.pdf)
+- [Descargar PDF en español](../_static/DocumentacionTFGenTiemposDeIA_es.pdf)
+- [Download PDF in English](../_static/DocumentacionTFGenTiemposDeIA_en.pdf)

@@ -128,7 +128,7 @@
    \endlist}
 
 % ========================================
-% Override Sphinx title page with USAL-branded cover
+% Override Sphinx title page with a clean academic cover
 % ========================================
 \renewcommand{\sphinxmaketitle}{%
   \let\sphinxrestorepageanchorsetting\relax
@@ -136,51 +136,61 @@
   \hypersetup{pageanchor=false}%
   \begin{titlepage}%
     \begin{tikzpicture}[remember picture, overlay]
-      % --- Red background ---
-      \fill[usalRed] (current page.south west) rectangle (current page.north east);
+      % --- White academic field ---
+      \fill[white] (current page.south west) rectangle (current page.north east);
 
-      % --- White content area ---
-      \fill[white, rounded corners=8pt]
-        ([xshift=1.5cm, yshift=1.5cm]current page.south west)
+      % --- Outer frame and institutional rule ---
+      \draw[usalLightGrey, line width=0.7pt]
+        ([xshift=1.8cm, yshift=1.8cm]current page.south west)
         rectangle
-        ([xshift=-1.5cm, yshift=-1.5cm]current page.north east);
+        ([xshift=-1.8cm, yshift=-1.8cm]current page.north east);
+      \draw[usalRed, line width=1.3pt]
+        ([xshift=2.4cm, yshift=-2.45cm]current page.north west)
+        --
+        ([xshift=-2.4cm, yshift=-2.45cm]current page.north east);
+      \draw[usalGrey, line width=0.35pt]
+        ([xshift=2.4cm, yshift=-2.62cm]current page.north west)
+        --
+        ([xshift=-2.4cm, yshift=-2.62cm]current page.north east);
 
-      % --- Logo (top center) ---
+      % --- Institution ---
+      \ifx\BookInstitution\empty\else
+        \node[anchor=north, text width=15cm, align=center] at ([yshift=-1.55cm]current page.north) {%
+          {\fontsize{10}{13}\selectfont\scshape\color{usalGrey} \BookInstitution \par}%
+        };
+      \fi
+
+      % --- Logo mark ---
       \ifx\BookCoverImage\empty\else
-        \node[anchor=north] at ([yshift=-2.5cm]current page.north) {%
-          \includegraphics[width=8cm]{\BookCoverImage}%
+        \node[anchor=north] at ([yshift=-3.15cm]current page.north) {%
+          \includegraphics[width=8.8cm]{\BookCoverImage}%
         };
       \fi
 
       % --- Title ---
-      \node[anchor=center, text width=15cm, align=center] at ([yshift=3.6cm]current page.center) {%
-        {\fontsize{32}{39}\selectfont\bfseries\color{usalRed} \TeachBookCoverTitle \par}%
+      \node[anchor=center, text width=15.2cm, align=center] at ([yshift=0.85cm]current page.center) {%
+        {\fontsize{30}{36}\selectfont\bfseries\color{usalRed} \TeachBookCoverTitle \par}%
       };
 
       % --- Subtitle ---
       \ifx\BookSubtitle\empty\else
-        \node[anchor=center, text width=14cm, align=center] at ([yshift=-2.0cm]current page.center) {%
-          {\fontsize{16}{20}\selectfont\color{usalGrey} \BookSubtitle \par}%
+        \node[anchor=center, text width=15.2cm, align=center] at ([yshift=-2.35cm]current page.center) {%
+          {\fontsize{13}{17}\selectfont\itshape\color{usalGrey}\hyphenpenalty=10000\exhyphenpenalty=10000\sloppy \BookSubtitle \par}%
         };
       \fi
 
       % --- Author ---
-      \node[anchor=center, text width=14cm, align=center] at ([yshift=-3.4cm]current page.center) {%
-        {\fontsize{14}{18}\selectfont\color{usalGrey} \@author \par}%
+      \node[anchor=center, text width=14cm, align=center] at ([yshift=-4.15cm]current page.center) {%
+        {\fontsize{13}{17}\selectfont\color{usalGrey} \@author \par}%
       };
 
-      % --- Institution ---
-      \ifx\BookInstitution\empty\else
-        \node[anchor=center, text width=14cm, align=center] at ([yshift=-4.7cm]current page.center) {%
-          {\fontsize{12}{15}\selectfont\color{usalGrey}\itshape \BookInstitution \par}%
-        };
-      \fi
-
-      % --- Bottom red band with metadata ---
-      \fill[usalRed] ([yshift=3cm]current page.south west) rectangle ([yshift=4.5cm]current page.south east);
-
-      \node[anchor=center, text width=16cm, align=center] at ([yshift=3.75cm]current page.south) {%
-        {\color{white}\small%
+      % --- Bottom metadata ---
+      \draw[usalRed, line width=1.3pt]
+        ([xshift=2.4cm, yshift=3.15cm]current page.south west)
+        --
+        ([xshift=-2.4cm, yshift=3.15cm]current page.south east);
+      \node[anchor=center, text width=15cm, align=center] at ([yshift=2.35cm]current page.south) {%
+        {\fontsize{10}{13}\selectfont\color{usalGrey}%
           \ifexpandednotempty{\BookEdition}{\BookEdition}%
           \ifexpandednotempty{\BookYear}{ \textbullet\ \BookYear}%
           \ifexpandednotempty{\BookISBN}{ \textbullet\ ISBN: \BookISBN}%

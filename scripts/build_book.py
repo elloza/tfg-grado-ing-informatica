@@ -32,6 +32,7 @@ except ModuleNotFoundError as exc:
 from collect_used_bibliography import BibliographyError, collect_used_bibliography
 
 VERBOSE = "--verbose" in sys.argv or "-v" in sys.argv
+PDF_FILENAME_PREFIX = "DocumentacionTFGenTiemposDeIA"
 
 
 def write_command_log(cmd, stdout, stderr):
@@ -75,6 +76,17 @@ def get_jupyter_book():
     return "jupyter-book"
 
 
+def get_sphinx_env():
+    """Return an environment where project-local Sphinx extensions are importable."""
+    env = os.environ.copy()
+    pythonpath = env.get("PYTHONPATH", "")
+    paths = [os.getcwd()]
+    if pythonpath:
+        paths.append(pythonpath)
+    env["PYTHONPATH"] = os.pathsep.join(paths)
+    return env
+
+
 def run_jupyter_book_build(cmd, label, attempts=3):
     """Run a Jupyter Book build with retries for transient network-backed extensions.
 
@@ -83,11 +95,12 @@ def run_jupyter_book_build(cmd, label, attempts=3):
     look broken, so retry the exact same build before failing for real.
     """
     last_error = None
+    env = get_sphinx_env()
     for attempt in range(1, attempts + 1):
         try:
             print(f"🚀 Ejecutando build {label} ({attempt}/{attempts}): {' '.join(cmd)}")
             if VERBOSE:
-                subprocess.check_call(cmd, shell=(os.name == "nt"))
+                subprocess.check_call(cmd, shell=(os.name == "nt"), env=env)
             else:
                 result = subprocess.run(
                     cmd,
@@ -97,6 +110,7 @@ def run_jupyter_book_build(cmd, label, attempts=3):
                     text=True,
                     encoding="utf-8",
                     errors="replace",
+                    env=env,
                 )
                 log_path = write_command_log(cmd, result.stdout, result.stderr)
                 if result.returncode != 0:
@@ -168,6 +182,15 @@ LANG_DISPLAY_NAMES = {
 BOOK_DIR = "book"
 BUILD_ROOT = os.path.join(BOOK_DIR, "_build")
 FINAL_HTML_DIR = os.path.join(BUILD_ROOT, "html")
+SPHINX_EXTENSION_FILES = ["sphinx_apa_citations.py"]
+
+
+def copy_project_sphinx_extensions(dest_dir):
+    """Copy lightweight project Sphinx extensions into standalone build roots."""
+    for filename in SPHINX_EXTENSION_FILES:
+        source = os.path.join(os.getcwd(), filename)
+        if os.path.isfile(source):
+            shutil.copy2(source, os.path.join(dest_dir, filename))
 
 
 def get_project_default_language():
@@ -423,7 +446,7 @@ def build_language(lang):
     # LOCALIZED STANDALONE BUILD (en, fr, etc.)
     config_file = f"_config_{lang}.yml"
     toc_file = f"_toc_{lang}.yml"
-    pdf_name = f"teachbook_{lang}.pdf"
+    pdf_name = f"{PDF_FILENAME_PREFIX}_{lang}.pdf"
 
     # 1. Create temporary standalone project AT ROOT to avoid recursion/path issues
     # Use _temp_build_{lang}
@@ -443,6 +466,7 @@ def build_language(lang):
 
     print(f"📂 Preparando entorno standalone en: {temp_build_root}")
     print(f"📂 Copiando contenido de '{lang}' a carpeta interna para mantener rutas...")
+    copy_project_sphinx_extensions(temp_build_root)
     shutil.copytree(lang_src_dir, lang_dst_dir)
 
     # 3. Copy _static folder (required for logo, css, js)
