@@ -182,7 +182,10 @@ LANG_DISPLAY_NAMES = {
 BOOK_DIR = "book"
 BUILD_ROOT = os.path.join(BOOK_DIR, "_build")
 FINAL_HTML_DIR = os.path.join(BUILD_ROOT, "html")
-SPHINX_EXTENSION_FILES = ["sphinx_apa_citations.py"]
+SPHINX_EXTENSION_FILES = [
+    "sphinx_apa_citations.py",
+    "sphinx_spanish_admonitions.py",
+]
 
 
 def copy_project_sphinx_extensions(dest_dir):

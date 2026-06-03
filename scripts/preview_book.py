@@ -184,6 +184,14 @@ def choose_port(requested: int) -> int:
 build_lock = threading.Lock()
 last_build_ok = False
 last_build_started = 0.0
+preview_state_lock = threading.Lock()
+preview_state = {
+    "revision": 0,
+    "building": False,
+    "ok": False,
+    "started": 0.0,
+    "finished": 0.0,
+}
 
 
 def run_real_build(reason: str) -> bool:
@@ -195,6 +203,11 @@ def run_real_build(reason: str) -> bool:
     last_build_started = started
 
     with build_lock:
+        with preview_state_lock:
+            preview_state["building"] = True
+            preview_state["ok"] = False
+            preview_state["started"] = started
+
         print("\n" + "=" * 72)
         print(f"🔨 Recompilando libro completo ({reason})")
         print("   Pipeline real: scripts/build_book.py -> book/_build/html")
@@ -224,11 +237,20 @@ def run_real_build(reason: str) -> bool:
 
         if return_code == 0 and (HTML_DIR / "index.html").exists():
             last_build_ok = True
+            with preview_state_lock:
+                preview_state["revision"] = int(preview_state["revision"]) + 1
+                preview_state["building"] = False
+                preview_state["ok"] = True
+                preview_state["finished"] = time.time()
             print(f"\n✅ Build correcto en {elapsed:.1f}s")
             print(f"📂 Sirviendo: {HTML_DIR}")
             return True
 
         last_build_ok = False
+        with preview_state_lock:
+            preview_state["building"] = False
+            preview_state["ok"] = False
+            preview_state["finished"] = time.time()
         print(f"\n❌ Build falló (exit code {return_code}) tras {elapsed:.1f}s")
         print("   No se abrirá una web vieja como si fuera correcta.")
         return False
@@ -293,6 +315,86 @@ def watcher_loop(stop_event: threading.Event, interval: float = 2.0) -> None:
 
 
 class NoCacheHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
+    def _preview_state_payload(self) -> bytes:
+        with preview_state_lock:
+            payload = dict(preview_state)
+        return json.dumps(payload).encode("utf-8")
+
+    def _live_reload_script(self) -> str:
+        with preview_state_lock:
+            revision = int(preview_state["revision"])
+
+        return f"""
+<script>
+(() => {{
+  const endpoint = "/__teachbook_preview_state";
+  let currentRevision = {revision};
+
+  async function checkForPreviewUpdate() {{
+    try {{
+      const response = await fetch(endpoint + "?t=" + Date.now(), {{ cache: "no-store" }});
+      if (!response.ok) return;
+      const state = await response.json();
+      if (state.ok && !state.building && state.revision !== currentRevision) {{
+        currentRevision = state.revision;
+        window.location.reload();
+      }}
+    }} catch (_error) {{
+      // The preview server may be restarting; keep the current page visible.
+    }}
+  }}
+
+  window.setInterval(checkForPreviewUpdate, 1000);
+}})();
+</script>
+"""
+
+    def _serve_preview_state(self) -> None:
+        payload = self._preview_state_payload()
+        self.send_response(200)
+        self.send_header("Content-Type", "application/json; charset=utf-8")
+        self.send_header("Content-Length", str(len(payload)))
+        self.end_headers()
+        if self.command != "HEAD":
+            self.wfile.write(payload)
+
+    def _serve_html_with_live_reload(self, head_only: bool = False) -> bool:
+        translated = Path(self.translate_path(self.path))
+        if translated.is_dir():
+            translated = translated / "index.html"
+        if translated.suffix.lower() != ".html" or not translated.is_file():
+            return False
+
+        content = translated.read_text(encoding="utf-8", errors="replace")
+        script = self._live_reload_script()
+        if "</body>" in content:
+            content = content.replace("</body>", script + "\n</body>", 1)
+        else:
+            content += script
+
+        payload = content.encode("utf-8")
+        self.send_response(200)
+        self.send_header("Content-Type", "text/html; charset=utf-8")
+        self.send_header("Content-Length", str(len(payload)))
+        self.end_headers()
+        if not head_only:
+            self.wfile.write(payload)
+        return True
+
+    def do_HEAD(self) -> None:
+        if self.path.split("?", 1)[0] == "/__teachbook_preview_state":
+            self._serve_preview_state()
+            return
+        if not self._serve_html_with_live_reload(head_only=True):
+            super().do_HEAD()
+
+    def do_GET(self) -> None:
+        if self.path.split("?", 1)[0] == "/__teachbook_preview_state":
+            self._serve_preview_state()
+            return
+        if not self._serve_html_with_live_reload():
+            super().do_GET()
+
     def end_headers(self) -> None:
         self.send_header("Cache-Control", "no-store, no-cache, must-revalidate, max-age=0")
         self.send_header("Pragma", "no-cache")

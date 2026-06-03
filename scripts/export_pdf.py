@@ -51,7 +51,10 @@ def get_jupyter_book():
 BOOK_DIR = "book"
 STATIC_DIR = os.path.join(BOOK_DIR, "_static")
 PDF_FILENAME_PREFIX = "DocumentacionTFGenTiemposDeIA"
-SPHINX_EXTENSION_FILES = ["sphinx_apa_citations.py"]
+SPHINX_EXTENSION_FILES = [
+    "sphinx_apa_citations.py",
+    "sphinx_spanish_admonitions.py",
+]
 SUPPORTED_ENGINES = ("tectonic", "latexmk", "auto")
 VERBOSE = "--verbose" in sys.argv or "-v" in sys.argv
 PDF_REQUIRED_DISTS = [

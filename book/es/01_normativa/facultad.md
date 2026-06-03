@@ -23,4 +23,4 @@ No uses fechas de cursos anteriores como referencia operativa. En el libro podem
 
 La Facultad indica que el depósito de la memoria y del documento de presentación se realiza a través de Studium en las fechas establecidas. A partir de ahí, la comisión asigna tribunal o comisión evaluadora según proceda.
 
-Para la documentación, esto tiene una consecuencia directa: la memoria y la presentación no se preparan al final. Se preparan con margen suficiente para que el tutor pueda revisar y para que el alumno corrija antes del depósito.
+Para la documentación, esto tiene una consecuencia directa: la memoria y la presentación no se preparan al final. **Se preparan con margen suficiente para que el tutor pueda revisar y para que el alumno corrija antes del depósito**. Normalmente suele haber varias rondas de revisión y corrección. Por experiencia de cursos anteriores, el proceso de revisión y corrección **suele durar aproximadamente un mes**. No empieces a preparar la documentación en el último momento, porque es muy probable que no te dé tiempo a corregir y a preparar la versión definitiva para el depósito.

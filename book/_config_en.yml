@@ -24,6 +24,7 @@ html_theme_options:
 sphinx:
   extra_extensions:
     - sphinx_apa_citations
+    - sphinx_spanish_admonitions
     - sphinx_thebe
     - sphinxcontrib.bibtex
     - sphinx_kroki

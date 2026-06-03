@@ -15,7 +15,7 @@ La página de la Facultad enlaza el Reglamento de Trabajos de Fin de Grado de la
 
 1. Comprobar la normativa vigente en el curso académico correspondiente.
 2. Revisar si hay cambios de calendario, depósito o defensa.
-3. Confirmar con el tutor cualquier duda sobre requisitos administrativos.
+3. Confirmar con el tutor o coordinador de Trabajos de Fin de Grado cualquier duda sobre requisitos administrativos.
 4. No copiar fragmentos normativos en la memoria salvo que aporten algo concreto; normalmente basta con cumplirlos.
 
 La memoria debe demostrar el trabajo realizado, no convertirse en una recopilación de reglamentos.

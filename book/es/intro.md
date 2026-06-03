@@ -10,7 +10,7 @@ La tesis práctica del libro es que hoy se puede documentar mejor trabajando com
 
 ## Uso ético de la inteligencia artificial
 
-Usar IA no elimina la responsabilidad del autor. Debes revisar tú mismo toda la documentación antes de enviársela al tutor. Bajo ningún concepto debe ser el tutor la primera persona que lea esas líneas: la IA puede ayudarte a redactar, pero la memoria la firmas tú.
+Usar IA no elimina la responsabilidad del autor. Debes revisar tú mismo toda la documentación antes de enviársela al tutor. **Bajo ningún concepto debe ser el tutor la primera persona que lea esas líneas: la IA puede ayudarte a redactar, pero la memoria la firmas tú.**
 
 ## ¿Para quién es?
 
@@ -21,9 +21,9 @@ Usar IA no elimina la responsabilidad del autor. Debes revisar tú mismo toda la
 
 ## ¿Cómo usarlo?
 
-Empieza por la normativa, porque define el terreno de juego. Después lee la parte de documentación, especialmente memoria, anexos, citas y correspondencias. Las secciones de herramientas e ingeniería del software están pensadas para volver a ellas mientras escribes.
+Empieza por la normativa, porque define las normas básicas. Después lee la parte de documentación, especialmente memoria, anexos, citas y correspondencias. Las secciones de herramientas e ingeniería del software están pensadas para volver a ellas mientras escribes.
 
-La versión HTML permite dejar preguntas por página mediante comentarios. Las dudas recurrentes se irán incorporando a la FAQ para que el libro pueda funcionar como documento vivo.
+La versión HTML permite dejar preguntas por página mediante comentarios con tu cuenta de GitHub. Las dudas recurrentes se irán incorporando a la FAQ para que el libro pueda funcionar como documento vivo.
 
 ## Versión PDF
 

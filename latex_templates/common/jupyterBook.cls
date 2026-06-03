@@ -139,11 +139,7 @@
       % --- White academic field ---
       \fill[white] (current page.south west) rectangle (current page.north east);
 
-      % --- Outer frame and institutional rule ---
-      \draw[usalLightGrey, line width=0.7pt]
-        ([xshift=1.8cm, yshift=1.8cm]current page.south west)
-        rectangle
-        ([xshift=-1.8cm, yshift=-1.8cm]current page.north east);
+      % --- Institutional rule ---
       \draw[usalRed, line width=1.3pt]
         ([xshift=2.4cm, yshift=-2.45cm]current page.north west)
         --
