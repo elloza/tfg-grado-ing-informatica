@@ -30,8 +30,10 @@ alt: Captura de Mendeley Reference Manager con una biblioteca de referencias y e
 width: 85%
 align: center
 ---
-Mendeley Reference Manager permite importar PDFs y organizar referencias en una biblioteca. Fuente: Mendeley {cite:p}`mendeley_features`.
+Mendeley Reference Manager permite importar PDFs y organizar referencias en una biblioteca.
 ```
+
+Fuente de la imagen: Mendeley {cite:p}`mendeley_features`.
 
 Un flujo cómodo con Mendeley es:
 
@@ -54,8 +56,10 @@ alt: Captura de Zotero con colecciones, lista de referencias y panel de metadato
 width: 85%
 align: center
 ---
-Zotero organiza fuentes por colecciones y muestra metadatos, adjuntos y notas en una misma interfaz. Fuente: Zotero {cite:p}`zotero_home`.
+Zotero organiza fuentes por colecciones y muestra metadatos, adjuntos y notas en una misma interfaz.
 ```
+
+Fuente de la imagen: Zotero {cite:p}`zotero_home`.
 
 ## Estilo bibliográfico
 

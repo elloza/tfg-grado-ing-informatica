@@ -30,8 +30,10 @@ alt: Screenshot of Mendeley Reference Manager with a reference library and the m
 width: 85%
 align: center
 ---
-Mendeley Reference Manager can import PDFs and organize references in a library. Source: Mendeley {cite:p}`mendeley_features`.
+Mendeley Reference Manager can import PDFs and organize references in a library.
 ```
+
+Image source: Mendeley {cite:p}`mendeley_features`.
 
 A comfortable workflow with Mendeley is:
 
@@ -54,8 +56,10 @@ alt: Screenshot of Zotero with collections, a reference list and a metadata pane
 width: 85%
 align: center
 ---
-Zotero organizes sources by collections and shows metadata, attachments and notes in the same interface. Source: Zotero {cite:p}`zotero_home`.
+Zotero organizes sources by collections and shows metadata, attachments and notes in the same interface.
 ```
+
+Image source: Zotero {cite:p}`zotero_home`.
 
 ## Bibliographic Style
 
