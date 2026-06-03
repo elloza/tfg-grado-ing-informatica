@@ -1320,7 +1320,10 @@ def install_tinytex_packages():
     print(f"   Paquetes explícitos: {', '.join(TINYTEX_PACKAGES)}")
     try:
         subprocess.run([tlmgr, "option", "repository", "ctan"], check=False, env=env, timeout=60)
-        subprocess.run([tlmgr, "update", "--self"], check=False, env=env, timeout=600)
+        if os.environ.get("CI") or os.environ.get("GITHUB_ACTIONS"):
+            print("ℹ️  CI detectado: se omite `tlmgr update --self` para evitar bloqueos de CTAN.")
+        else:
+            subprocess.run([tlmgr, "update", "--self"], check=False, env=env, timeout=600)
         run([tlmgr, "install", *TINYTEX_PACKAGES], env=env)
         subprocess.run([tlmgr, "postaction", "install", "script", "xetex"], check=False, env=env, timeout=300)
     except Exception as exc:
