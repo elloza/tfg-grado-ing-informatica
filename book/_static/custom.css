@@ -309,3 +309,21 @@ html.opendyslexic-mode code {
     font-size: 0.95rem;
     margin-bottom: 1rem;
 }
+
+/* ========================================
+   APA-like bibliography list
+   ======================================== */
+.citation-list .citation[role="doc-biblioentry"] {
+    margin: 0 0 0.85rem 0;
+    padding-left: 2rem;
+    text-indent: -2rem;
+}
+
+.citation-list .citation[role="doc-biblioentry"] > .label {
+    display: none;
+}
+
+.citation-list .citation[role="doc-biblioentry"] > p {
+    display: inline;
+    margin: 0;
+}

@@ -1,6 +1,6 @@
 # Citas y bibliografía
 
-En esta guía el criterio es deliberadamente estricto: un TFG serio debe usar un gestor bibliográfico. Mendeley y Zotero son opciones razonables; elegir uno u otro es menos importante que no gestionar referencias a mano.
+En esta guía el criterio es deliberadamente estricto: **un TFG serio debe usar un gestor bibliográfico**. Mendeley y Zotero son opciones razonables; elegir uno u otro es menos importante que no gestionar referencias a mano.
 
 Gestionar citas manualmente suele terminar en errores:
 
@@ -23,10 +23,20 @@ Gestionar citas manualmente suele terminar en errores:
 
 ## Mendeley como ejemplo
 
+```{figure} ../../_static/documentacion/mendeley_reference_manager_library.png
+---
+name: fig-mendeley-reference-manager
+alt: Captura de Mendeley Reference Manager con una biblioteca de referencias y el menú para añadir referencias.
+width: 85%
+align: center
+---
+Mendeley Reference Manager permite importar PDFs y organizar referencias en una biblioteca. Fuente: Mendeley {cite:p}`mendeley_features`.
+```
+
 Un flujo cómodo con Mendeley es:
 
 - Usar Mendeley Reference Manager como biblioteca central {cite:p}`mendeley_reference_manager`.
-- Instalar Mendeley Web Importer en Chrome o navegador compatible para capturar artículos, páginas y PDFs.
+- Instalar Mendeley Web Importer en Chrome o navegador compatible para capturar artículos, páginas y PDFs {cite:p}`mendeley_web_importer`.
 - Revisar autores, título, año, DOI, URL y fecha de consulta.
 - En Word, insertar citas con el complemento de Mendeley.
 - En LaTeX u Overleaf, exportar una colección a BibTeX o mantener un archivo `.bib` sincronizado.
@@ -37,9 +47,29 @@ El punto crítico no es pulsar "importar". El punto crítico es revisar. Muchos 
 
 Zotero es una alternativa muy sólida, especialmente si quieres un ecosistema abierto, buena captura desde navegador y exportación BibTeX/BibLaTeX {cite:p}`zotero_docs`.
 
+```{figure} ../../_static/documentacion/zotero_desktop_application.png
+---
+name: fig-zotero-desktop-application
+alt: Captura de Zotero con colecciones, lista de referencias y panel de metadatos de un documento.
+width: 85%
+align: center
+---
+Zotero organiza fuentes por colecciones y muestra metadatos, adjuntos y notas en una misma interfaz. Fuente: Zotero {cite:p}`zotero_home`.
+```
+
 ## Estilo bibliográfico
 
-Si tu tutor, la comisión o la normativa vigente exigen un estilo, usa ese. La guía de documentación del DIA indica que la bibliografía debe citarse adecuadamente siguiendo el estándar que se considere más oportuno {cite:p}`dia_documentacion_tfg_v2`. En este libro se usa un formato tipo APA, con citas de autor y año, porque encaja mejor con una guía académica que combina normativa, documentación web, manuales y referencias docentes. En una memoria de TFG, este formato ayuda a leer de dónde viene cada idea sin obligar al lector a saltar continuamente a una lista numerada. Si tu tutor, la comisión o una plantilla oficial exigen IEEE u otro estilo, esa indicación prevalece. En cualquier caso, la consistencia pesa más que la preferencia personal.
+Si tu tutor, la comisión o la normativa vigente exigen un estilo, usa ese. La guía de documentación del DIA indica que la bibliografía debe citarse adecuadamente siguiendo el estándar que se considere más oportuno {cite:p}`dia_documentacion_tfg_v2`.
+
+En este libro se usa un sistema **autor-año de inspiración APA**. Eso significa que una cita parentética debe verse como *(Autor, año)* y una cita narrativa puede integrarse como *Autor (año)*. La bibliografía final se muestra sin numeración visible y con sangría francesa, para aproximarse al aspecto habitual de una lista de referencias APA.
+
+```{admonition} APA en este libro
+:class: note
+
+La configuración del libro fuerza citas autor-año con paréntesis y oculta las etiquetas numéricas de la bibliografía final. Aun así, conviene hablar de *estilo tipo APA* o *autor-año*, no de cumplimiento estricto de APA 7.ª edición, porque la lista la genera Jupyter Book/Sphinx a partir de BibTeX.
+```
+
+En una memoria de TFG, el formato autor-año ayuda a leer de dónde viene cada idea sin obligar al lector a saltar continuamente a una lista numerada. Si tu tutor, la comisión o una plantilla oficial exigen IEEE u otro estilo, esa indicación prevalece. En cualquier caso, la consistencia pesa más que la preferencia personal.
 
 ```{important}
 La IA puede ayudarte a detectar referencias incompletas, pero no debe inventar fuentes. Toda referencia debe existir, ser pertinente y haber sido consultada por el autor.
